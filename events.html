@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - City Institute of Higher Learning</title>
+    <style>
+        :root {
+            --bg-start: #F9EDE4;
+            --bg-mid: #E7B7A5;
+            --bg-end: #C25A47;
+            --accent: #D67A63;
+            --nav-height: 72px;
+            --card-radius: 14px;
+            --glass: rgba(255,255,255,0.2);
+            --max-width: 1200px;
+            --text-dark: #0A1A2A;
+            --green-dark: #0F3D2E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-start);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--text-dark);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .logo h2 {
+            color: white;
+        }
+        
+        .language-selector select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--bg-start);
+        }
+        
+        /* Collage section */
+        .collage {
+            margin-top: var(--nav-height);
+            height: 300px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        
+        .collage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Hero section */
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 100%);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-dark);
+        }
+        
+        /* Events Search and Navigation */
+        .events-controls {
+            padding: 3rem 0;
+            background-color: white;
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            background-color: var(--bg-start);
+        }
+        
+        .search-box::after {
+            content: "🔍";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .view-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .view-btn {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: 2px solid var(--accent);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            color: var(--text-dark);
+        }
+        
+        .view-btn.active,
+        .view-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .date-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            font-weight: bold;
+        }
+        
+        /* Events List Section */
+        .events-list {
+            padding: 3rem 0;
+            background-color: var(--bg-start);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+        
+        .no-events-message {
+            text-align: center;
+            padding: 3rem;
+            background-color: white;
+            border-radius: var(--card-radius);
+            margin-bottom: 3rem;
+        }
+        
+        .no-events-message h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        /* Past Events Section */
+        .past-events {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .events-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .event-header {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--bg-mid) 0%, var(--accent) 100%);
+            color: white;
+        }
+        
+        .event-date {
+            text-align: center;
+            margin-right: 1.5rem;
+            min-width: 80px;
+        }
+        
+        .event-month {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+        
+        .event-day {
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .event-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-time {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .event-content {
+            padding: 2rem;
+        }
+        
+        .event-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .event-tag {
+            display: inline-block;
+            background-color: var(--bg-start);
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--bg-end);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--bg-end);
+            color: var(--bg-end);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--bg-end);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--bg-start);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .collage {
+                grid-template-columns: repeat(2, 1fr);
+                height: 200px;
+            }
+            
+            .event-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .event-date {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .view-navigation {
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .collage {
+                grid-template-columns: 1fr;
+                height: 150px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <h2>C-IHL</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+        </ul>
+        <div class="language-selector">
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Collage Section -->
+    <section class="collage">
+        <img src="https://source.unsplash.com/random/600x400/?conference,event,1" alt="Conference event">
+        <img src="https://source.unsplash.com/random/600x400/?workshop,education,2" alt="Educational workshop">
+        <img src="https://source.unsplash.com/random/600x400/?networking,professional,3" alt="Networking event">
+        <img src="https://source.unsplash.com/random/600x400/?campus,gathering,4" alt="Campus gathering">
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Campus Events & Activities</h1>
+            <p>Join our vibrant academic community through engaging events, workshops, and cultural activities that enrich the educational experience and foster meaningful connections.</p>
+        </div>
+    </section>
+
+    <!-- Events Search and Navigation -->
+    <section class="events-controls">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Enter Keyword. Search for Events by Keyword.">
+                </div>
+            </div>
+            
+            <div class="view-navigation">
+                <button class="view-btn">List</button>
+                <button class="view-btn">Month</button>
+                <button class="view-btn">Day</button>
+                <button class="view-btn active">Today</button>
+            </div>
+            
+            <div class="date-navigation">
+                <button class="btn btn-outline">← Previous</button>
+                <span>November 19, 2025</span>
+                <button class="btn btn-outline">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section class="events-list">
+        <div class="container">
+            <div class="no-events-message">
+                <h3>There are no upcoming events.</h3>
+                <p>Check back later for new events and activities, or browse our past events below.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events Section -->
+    <section class="past-events">
+        <div class="container">
+            <h2 class="section-title">Latest Past Events</h2>
+            
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <div class="event-month">MAY</div>
+                            <div class="event-day">15</div>
+                        </div>
+                        <div>
+                            <h3 class="event-title">2nd Conference on Economic Growth in Atlantic Canada</h3>
+                            <div class="event-time">May 15 @ 8:00 am - May 17 @ 5:00 pm</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-tag">Conference</span>
+                        <p class="event-description">
+                            🎤 Experience the Future of Innovation! Join us from May 15–17, 2025, in Dieppe, New Brunswick, for the 2nd Conference on Economic Growth in Atlantic Canada. This year's theme, "Innovation Hubs: Fostering Entrepreneurship and Global Cooperation", brings together business leaders, researchers, and policymakers to explore new opportunities for collaboration and growth. Connect with experts through keynotes, workshops, and networking sessions. Let's spark ideas that shape the future!
+                        </p>
+                        <p><strong>Location:</strong> Hotel Wingate 69 Rue du Marché, Dieppe</p>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="#" class="btn">View Event Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <div class="event-month">DEC</div>
+                            <div class="event-day">12</div>
+                        </div>
+                        <div>
+                            <h3 class="event-title">Session d'Information en Collaboration avec AIAC-NB</h3>
+                            <div class="event-time">December 12, 2024 @ 6:00 pm - 7:00 pm</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-tag">Information Session</span>
+                        <span class="event-tag" style="background-color: #E8F5E8; color: #2E7D32;">Free</span>
+                        <p class="event-description">
+                            Vous souhaitez en savoir plus sur nos programmes académiques et les opportunités qu'ils offrent ? Rejoignez-nous pour une session d'information spéciale, organisée en collaboration avec l'Association Initiatives Afro-Canadiennes du Nouveau-Brunswick (AIAC- NB). Pourquoi participer ? ✅ Découvrez nos diplômes et certifications adaptés aux besoins actuels. ✅ Posez vos questions et échangez directement avec nos experts. ✅ Explorez comment nos formations peuvent booster votre carrière.
+                        </p>
+                        <p><strong>Location:</strong> Association Initiatives Afro-Canadiennes du Nouveau Brunswick (AIAC-NB)</p>
+                        <p><strong>Online Access:</strong> meet.google.com/mun-wxbs-eib</p>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <div class="event-month">DEC</div>
+                            <div class="event-day">9</div>
+                        </div>
+                        <div>
+                            <h3 class="event-title">Session d'Information en Collaboration avec AIAC-NB</h3>
+                            <div class="event-time">December 9, 2024 @ 12:00 pm - 1:00 pm</div>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-tag">Information Session</span>
+                        <span class="event-tag" style="background-color: #E8F5E8; color: #2E7D32;">Free</span>
+                        <p class="event-description">
+                            Vous souhaitez en savoir plus sur nos programmes académiques et les opportunités qu'ils offrent ? Rejoignez-nous pour une session d'information spéciale, organisée en collaboration avec l'Association Initiatives Afro-Canadiennes du Nouveau-Brunswick (AIAC- NB). Pourquoi participer ? ✅ Découvrez nos diplômes et certifications adaptés aux besoins actuels. ✅ Posez vos questions et échangez directement avec nos experts. ✅ Explorez comment nos formations peuvent booster votre carrière.
+                        </p>
+                        <p><strong>Location:</strong> Association Initiatives Afro-Canadiennes du Nouveau Brunswick (AIAC-NB)</p>
+                        <p><strong>Online Access:</strong> meet.google.com/yut-qnwb-pes</p>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C-IHL</h3>
+                    <p>City Institute of Higher Learning (C-IHL) is an advanced research-focused education institute in New Brunswick, Canada.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Programmes</h3>
+                    <ul>
+                        <li><a href="#">Academic Diplomas</a></li>
+                        <li><a href="#">Executive Education</a></li>
+                        <li><a href="#">Community Programmes</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Student Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>+1 506 388 2833</li>
+                        <li>admin@city-ihl.ca</li>
+                        <li>Moncton, New Brunswick</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 City Institute of Higher Learning</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language selector functionality
+            document.getElementById('language-select').addEventListener('change', function() {
+                const selectedLang = this.value;
+                alert('Language changed to: ' + this.options[this.selectedIndex].text);
+            });
+
+            // View navigation functionality
+            const viewButtons = document.querySelectorAll('.view-btn');
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    viewButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Search functionality
+            const searchInput = document.querySelector('.search-box input');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                // In a real implementation, this would filter events
+                console.log('Searching for:', searchTerm);
+            });
+
+            // Date navigation functionality
+            const prevBtn = document.querySelector('.date-navigation .btn:first-child');
+            const nextBtn = document.querySelector('.date-navigation .btn:last-child');
+            
+            prevBtn.addEventListener('click', function() {
+                // In a real implementation, this would navigate to previous date
+                alert('Navigate to previous date');
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                // In a real implementation, this would navigate to next date
+                alert('Navigate to next date');
+            });
+        });
+    </script>
+</body>
+</html>

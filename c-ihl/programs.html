@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - City Institute of Higher Learning</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="C-IHL Logo" class="logo-img">
+            <h2>C-IHL</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html" class="active">Programs</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+            <li> <a href="contact.html" data-i18n="nav.contact">Contact</a></li> 
+        </ul>
+        <div class="language-selector">
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Collage Section -->
+    <section class="collage">
+        <img src="https://source.unsplash.com/random/600x400/?students,smiling,1" alt="Happy students">
+        <img src="https://source.unsplash.com/random/600x400/?classroom,2" alt="Classroom">
+        <img src="https://source.unsplash.com/random/600x400/?graduation,3" alt="Graduation">
+        <img src="https://source.unsplash.com/random/600x400/?campus,4" alt="Campus">
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Our Programs</h1>
+            <p>Discover our diverse range of academic programs designed to equip you with the knowledge and skills needed for success in today's dynamic world. We offer both long-form and short-form programs across multiple disciplines.</p>
+        </div>
+    </section>
+
+    <!-- Programs Filter -->
+    <section class="programs-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Programs</button>
+                <button class="filter-btn" data-filter="social-sciences">Social Sciences & Research</button>
+                <button class="filter-btn" data-filter="education">Education & Communication</button>
+                <button class="filter-btn" data-filter="business">Business School</button>
+                <button class="filter-btn" data-filter="long-form">Long Form Programs</button>
+                <button class="filter-btn" data-filter="short-form">Short Form Programs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Grid -->
+    <section class="programs-grid">
+        <div class="container">
+            <!-- School of Social Sciences and Research -->
+            <div class="school-section" data-category="social-sciences">
+                <h2 class="school-title">School of Social Sciences and Research</h2>
+                <div class="programs-cards">
+                    <!-- Program 1 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?dispute,resolution,1" alt="Alternative Dispute Resolution">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Executive Diploma in Alternative Dispute Resolution</h3>
+                            <span class="program-type">1 Year • Diploma</span>
+                            <p class="program-description">A comprehensive one-year programme designed to equip participants with in-depth knowledge, practical skills, and a strong theoretical foundation in various methods of resolving disputes outside traditional litigation.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$7,500 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/adr-executive.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 2 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?research,2" alt="Higher Learning Diploma in ADR">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Higher Learning Diploma in Alternative Dispute Resolution</h3>
+                            <span class="program-type">1 Year • Advanced Diploma</span>
+                            <p class="program-description">An advanced programme with research component for those seeking comprehensive knowledge in dispute resolution methods with a focus on mediation, arbitration, negotiation, and conciliation.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$7,500 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/adr-hld.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 3 -->
+                    <div class="program-card" data-type="short-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?arbitration,3" alt="Certificate in Arbitrary">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Certificate in Arbitrary</h3>
+                            <span class="program-type">Short Program • Certificate</span>
+                            <p class="program-description">Focused training in arbitration practices and principles for professionals seeking specialized skills in dispute resolution.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>Contact for details</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/arbitrary-cert.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 4 -->
+                    <div class="program-card" data-type="short-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?postdoc,4" alt="Post Doctoral Experience">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Post Doctoral Experience</h3>
+                            <span class="program-type">3-12 Months • Research</span>
+                            <p class="program-description">Put your research into practice as a visiting scholar. Work with our research team to develop your thesis into publishable papers or pursue new research topics.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>Varies by duration</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/postdoc.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 5 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?research,skills,5" alt="HLD in Research Skills">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Higher Learning Diploma in Research Skills</h3>
+                            <span class="program-type">1 Year • Advanced Diploma</span>
+                            <p class="program-description">For those who wish to work as social researchers and consultants. Advanced understanding of quantitative and qualitative research methodologies.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$3,500-$6,500 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/research-skills.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 6 -->
+                    <div class="program-card" data-type="short-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?specialist,research,6" alt="Specialist Diploma by Research">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Specialist Diploma by Research</h3>
+                            <span class="program-type">24 Weeks • Diploma</span>
+                            <p class="program-description">A research-based programme for professionals and graduates who did not undertake a research-based dissertation during their academic training.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$2,050-$2,950 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/specialist-diploma.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 7 -->
+                    <div class="program-card" data-type="short-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?research,assistant,7" alt="Certificate in Research Assistantship">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Certificate in Research Assistantship</h3>
+                            <span class="program-type">3-6 Months • Certificate</span>
+                            <p class="program-description">Provides existing or aspiring research assistants with enhanced skills to support the work of principal investigators and research teams.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$1,500 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/research-assistant.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 8 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?global,studies,8" alt="HLD in Global Studies">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Higher Learning Diploma in Global Studies</h3>
+                            <span class="program-type">1 Year • Advanced Diploma</span>
+                            <p class="program-description">Prepares you for global careers through a combination of specialist courses and supervised independent research on international affairs and globalization.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$3,500-$6,500 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/global-studies.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 9 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?social,sciences,9" alt="Diploma in Social Sciences and Business">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Diploma in Social Sciences and Business</h3>
+                            <span class="program-type">2 Years • Diploma</span>
+                            <p class="program-description">An initial diploma for recent high school graduates preparing for roles in human services, administration, or private enterprise.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$3,200-$9,000 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/social-sciences-business.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- School of Education and International Communication -->
+            <div class="school-section" data-category="education">
+                <h2 class="school-title">School of Education and International Communication</h2>
+                <div class="programs-cards">
+                    <!-- Program 1 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?languages,10" alt="Advanced Diploma in Languages">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Advanced Diploma in Languages for International Communication</h3>
+                            <span class="program-type">1 Year • Advanced Diploma</span>
+                            <p class="program-description">Convert your language skills into employability assets. Available in English, French, Spanish, Arabic, and Chinese Mandarin.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$4,000-$6,000 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/languages-communication.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 2 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?culture,11" alt="HLD in Language, Culture and Society">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Higher Learning Diploma in Language, Culture and Society</h3>
+                            <span class="program-type">1 Year • Advanced Diploma</span>
+                            <p class="program-description">Postgraduate level award for candidates with high proficiency in target languages, focusing on linguistic history and contemporary issues.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$5,000-$7,000 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/language-culture.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 3 -->
+                    <div class="program-card" data-type="short-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?language,class,12" alt="Language Courses">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Language Courses</h3>
+                            <span class="program-type">Community Program • Certificate</span>
+                            <p class="program-description">Learn languages to communicate with our diverse community. Small class sizes with minimal cost. Available in Arabic, English, Chinese, Hindi, Korean, Spanish, French and more.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>Minimal cost</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/language-courses.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- School of Education and Teacher Training -->
+            <div class="school-section" data-category="education">
+                <h2 class="school-title">School of Education and Teacher Training</h2>
+                <div class="programs-cards">
+                    <!-- Program 1 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?teaching,13" alt="Postgraduate Certificate in Education">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Postgraduate Certificate in Education (PGCE)</h3>
+                            <span class="program-type">1 Year • Certificate</span>
+                            <p class="program-description">Prepares candidates to teach in various educational settings: secondary, postsecondary and industry with specialized pathways.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$5,000-$7,000 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/pgce.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 2 -->
+                    <div class="program-card" data-type="short-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?training,14" alt="Certificate in Training and Consulting">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Certificate in Training and Consulting</h3>
+                            <span class="program-type">20 Weeks • Certificate</span>
+                            <p class="program-description">Advanced understanding of training and consulting practice with solid grounding in adult learning theories and practical skills.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$2,900-$3,900 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/training-consulting.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 3 -->
+                    <div class="program-card" data-type="short-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?immigrants,15" alt="Certificate in Working with Immigrants">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Certificate in Working with Immigrants</h3>
+                            <span class="program-type">16 Weeks • Certificate</span>
+                            <p class="program-description">Learn about immigrants, their contributions, and issues they face. Develop skills to help them integrate into local society.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$750-$1,500 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/working-immigrants.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- City Business School -->
+            <div class="school-section" data-category="business">
+                <h2 class="school-title">City Business School</h2>
+                <div class="programs-cards">
+                    <!-- Program 1 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?executive,16" alt="Executive Diploma in Management">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Executive Diploma in Management (EDM)</h3>
+                            <span class="program-type">1 Year • Diploma</span>
+                            <p class="program-description">Develop executive expertise in modern managerial practice with specializations in Marketing, HR, Logistics, or Supply Chain Management.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$3,500-$6,750 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/executive-management.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 2 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?international,business,17" alt="HLD in International Management">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Higher Learning Diploma in International Management</h3>
+                            <span class="program-type">1 Year • Advanced Diploma</span>
+                            <p class="program-description">For applicants with managerial experience, focusing on global business management with significant research component.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$3,500-$6,500 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/international-management.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Program 3 -->
+                    <div class="program-card" data-type="long-form">
+                        <div class="program-image">
+                            <img src="https://source.unsplash.com/random/600x400/?business,studies,18" alt="Advanced Diploma in Business Studies">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Advanced Diploma in Business Studies</h3>
+                            <span class="program-type">1 Year • Advanced Diploma</span>
+                            <p class="program-description">Professional diploma for candidates with college diplomas, preparing them for management challenges in a global context.</p>
+                            <div class="program-details">
+                                <div class="program-detail">
+                                    <span class="detail-label">Fees</span>
+                                    <span>$3,200-$6,500 CAD</span>
+                                </div>
+                                <div class="program-detail">
+                                    <span class="detail-label">Format</span>
+                                    <span>On-campus/Virtual</span>
+                                </div>
+                            </div>
+                            <div class="program-actions">
+                                <a href="program-details/business-studies.html" class="btn">Learn More</a>
+                                <a href="#" class="btn btn-outline">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C-IHL</h3>
+                    <p>City Institute of Higher Learning (C-IHL) is an advanced research-focused education institute in New Brunswick, Canada.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Programmes</h3>
+                    <ul>
+                        <li><a href="#">Academic Diplomas</a></li>
+                        <li><a href="#">Executive Education</a></li>
+                        <li><a href="#">Community Programmes</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Student Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>+1 506 388 2833</li>
+                        <li>admin@city-ihl.ca</li>
+                        <li>Moncton, New Brunswick</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 City Institute of Higher Learning</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Program filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const programCards = document.querySelectorAll('.program-card');
+            const schoolSections = document.querySelectorAll('.school-section');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show all if "all" is selected
+                    if (filterValue === 'all') {
+                        programCards.forEach(card => {
+                            card.style.display = 'block';
+                        });
+                        schoolSections.forEach(section => {
+                            section.style.display = 'block';
+                        });
+                        return;
+                    }
+                    
+                    // Filter programs
+                    let hasVisiblePrograms = false;
+                    
+                    programCards.forEach(card => {
+                        const programType = card.getAttribute('data-type');
+                        const schoolCategory = card.closest('.school-section').getAttribute('data-category');
+                        
+                        if (filterValue === 'long-form' || filterValue === 'short-form') {
+                            if (programType === filterValue) {
+                                card.style.display = 'block';
+                                hasVisiblePrograms = true;
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        } else {
+                            if (schoolCategory === filterValue) {
+                                card.style.display = 'block';
+                                hasVisiblePrograms = true;
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                    
+                    // Show/hide school sections based on visible programs
+                    schoolSections.forEach(section => {
+                        const sectionCategory = section.getAttribute('data-category');
+                        const programsInSection = section.querySelectorAll('.program-card');
+                        let hasVisibleInSection = false;
+                        
+                        programsInSection.forEach(card => {
+                            if (card.style.display !== 'none') {
+                                hasVisibleInSection = true;
+                            }
+                        });
+                        
+                        if (filterValue === 'all' || 
+                            (filterValue === 'long-form' || filterValue === 'short-form') ||
+                            sectionCategory === filterValue) {
+                            section.style.display = hasVisibleInSection ? 'block' : 'none';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Language selector functionality
+            document.getElementById('language-select').addEventListener('change', function() {
+                const selectedLang = this.value;
+                // This will be enhanced with the full language.js file later
+                alert('Language changed to: ' + this.options[this.selectedIndex].text);
+            });
+        });
+    </script>
+</body>
+</html>

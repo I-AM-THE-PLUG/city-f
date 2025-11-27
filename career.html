@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - City Institute of Higher Learning</title>
+    <style>
+        :root {
+            --bg-start: #F9EDE4;
+            --bg-mid: #E7B7A5;
+            --bg-end: #C25A47;
+            --accent: #D67A63;
+            --nav-height: 72px;
+            --card-radius: 14px;
+            --glass: rgba(255,255,255,0.2);
+            --max-width: 1200px;
+            --text-dark: #0A1A2A;
+            --green-dark: #0F3D2E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-start);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--text-dark);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .logo h2 {
+            color: white;
+        }
+        
+        .language-selector select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--bg-start);
+        }
+        
+        /* Collage section */
+        .collage {
+            margin-top: var(--nav-height);
+            height: 300px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        
+        .collage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Hero section */
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 100%);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-dark);
+        }
+        
+        /* Why Work With Us section */
+        .why-work {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+        
+        .intro-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        
+        .benefit-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+        }
+        
+        /* Job Opportunities section */
+        .job-opportunities {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--bg-mid) 0%, var(--bg-start) 100%);
+        }
+        
+        .job-listing {
+            background: white;
+            border-radius: var(--card-radius);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .job-header {
+            border-bottom: 2px solid var(--bg-mid);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .job-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .job-meta {
+            display: flex;
+            gap: 2rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .job-content {
+            margin-bottom: 2rem;
+        }
+        
+        .job-section {
+            margin-bottom: 2rem;
+        }
+        
+        .job-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--bg-end);
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+        }
+        
+        .job-section ul {
+            list-style-position: outside;
+            margin-left: 1.5rem;
+        }
+        
+        .job-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .apply-section {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--bg-mid);
+        }
+        
+        /* Volunteer section */
+        .volunteer {
+            padding: 4rem 0;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .volunteer-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .volunteer-content h2 {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .volunteer-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        /* Contact section */
+        .contact-info {
+            padding: 4rem 0;
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-info h2 {
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .contact-details {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .contact-details p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--bg-end);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-large {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--bg-start);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .collage {
+                grid-template-columns: repeat(2, 1fr);
+                height: 200px;
+            }
+            
+            .benefits-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .job-listing {
+                padding: 2rem;
+            }
+            
+            .job-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .collage {
+                grid-template-columns: 1fr;
+                height: 150px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .job-listing {
+                padding: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <h2>C-IHL</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="career.html" class="active">Career</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+        </ul>
+        <div class="language-selector">
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Collage Section -->
+    <section class="collage">
+        <img src="https://source.unsplash.com/random/600x400/?workplace,office,1" alt="Modern workplace">
+        <img src="https://source.unsplash.com/random/600x400/?team,meeting,2" alt="Team meeting">
+        <img src="https://source.unsplash.com/random/600x400/?career,development,3" alt="Career development">
+        <img src="https://source.unsplash.com/random/600x400/?university,staff,4" alt="University staff">
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Build Your Career at C-IHL</h1>
+            <p>Join a vibrant community of educators, researchers, and innovators dedicated to shaping the future of global education. At City Institute of Higher Learning, your work makes a real impact on students' lives and the broader educational landscape.</p>
+        </div>
+    </section>
+
+    <!-- Why Work With Us Section -->
+    <section class="why-work">
+        <div class="container">
+            <h2 class="section-title">Why Choose C-IHL?</h2>
+            <p class="intro-text">
+                C-IHL is not just a workplace; it's a place where you can grow your career alongside leaders in education and research from around the globe. We pride ourselves on a culture that supports work-life balance, provides competitive benefits, and fosters an inclusive environment where ideas thrive.
+            </p>
+            
+            <div class="benefits-container">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌍</div>
+                    <div class="benefit-content">
+                        <h3>Global Network</h3>
+                        <p>Connect with professionals and researchers worldwide in our truly international academic environment.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">📚</div>
+                    <div class="benefit-content">
+                        <h3>Professional Growth</h3>
+                        <p>Access ongoing training, workshops, and clear pathways for career advancement and skill development.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚖️</div>
+                    <div class="benefit-content">
+                        <h3>Work-Life Harmony</h3>
+                        <p>Flexible working arrangements and supportive policies that respect your personal commitments.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">💡</div>
+                    <div class="benefit-content">
+                        <h3>Innovation Focus</h3>
+                        <p>State-of-the-art facilities and resources supporting cutting-edge research and teaching methodologies.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-content">
+                        <h3>Collaborative Spirit</h3>
+                        <p>Work in teams that value diverse perspectives and encourage cross-disciplinary collaboration.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <div class="benefit-content">
+                        <h3>Competitive Package</h3>
+                        <p>Comprehensive benefits including health insurance, retirement plans, and professional development support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Opportunities Section -->
+    <section class="job-opportunities">
+        <div class="container">
+            <h2 class="section-title">Current Opportunities</h2>
+            
+            <!-- Korean Language Instructor Position -->
+            <div class="job-listing">
+                <div class="job-header">
+                    <h2 class="job-title">Korean Language Instructor</h2>
+                    <div class="job-meta">
+                        <span>School of Education and International Communication</span>
+                        <span>• Full-time Position</span>
+                    </div>
+                </div>
+                
+                <div class="job-content">
+                    <div class="job-section">
+                        <p>We're seeking a passionate Korean Language Instructor to join our diverse team. Ideal candidates are enthusiastic about language education and committed to fostering linguistic and cultural understanding.</p>
+                    </div>
+                    
+                    <div class="job-section">
+                        <h4>Key Responsibilities</h4>
+                        <ul>
+                            <li>Design and implement engaging curriculum and teaching materials</li>
+                            <li>Deliver lessons catering to diverse learning styles</li>
+                            <li>Evaluate student progress and provide constructive feedback</li>
+                            <li>Participate in faculty development activities</li>
+                            <li>Collaborate on cultural integration in language programs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job-section">
+                        <h4>Qualifications</h4>
+                        <ul>
+                            <li>Proficiency in Korean and English</li>
+                            <li>Previous teaching experience preferred</li>
+                            <li>Strong interpersonal and communication skills</li>
+                            <li>Commitment to educational excellence</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="apply-section">
+                    <a href="mailto:admin@city-ihl.ca?subject=Application for Korean Language Instructor" class="btn btn-large">Apply for This Position</a>
+                </div>
+            </div>
+            
+            <!-- Spanish Language Instructor Position -->
+            <div class="job-listing">
+                <div class="job-header">
+                    <h2 class="job-title">Spanish Language Instructor</h2>
+                    <div class="job-meta">
+                        <span>School of Education and International Communication</span>
+                        <span>• Full-time Position</span>
+                    </div>
+                </div>
+                
+                <div class="job-content">
+                    <div class="job-section">
+                        <p>Join our expanding language program as a dedicated Spanish Language Instructor. Perfect for individuals passionate about language education and cultural exchange in a dynamic academic setting.</p>
+                    </div>
+                    
+                    <div class="job-section">
+                        <h4>Key Responsibilities</h4>
+                        <ul>
+                            <li>Develop interactive lesson plans for various proficiency levels</li>
+                            <li>Create engaging classroom environments</li>
+                            <li>Regularly assess and provide feedback on student progress</li>
+                            <li>Stay current with language teaching methodologies</li>
+                            <li>Integrate Hispanic cultural components into curriculum</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job-section">
+                        <h4>Qualifications</h4>
+                        <ul>
+                            <li>Fluency in Spanish and English</li>
+                            <li>Proven teaching experience preferred</li>
+                            <li>Strong organizational and classroom management skills</li>
+                            <li>Commitment to innovative teaching strategies</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="apply-section">
+                    <a href="mailto:admin@city-ihl.ca?subject=Application for Spanish Language Instructor" class="btn btn-large">Apply for This Position</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section class="volunteer">
+        <div class="container">
+            <div class="volunteer-content">
+                <h2>Volunteer With Us</h2>
+                <p>Join our vibrant community as a volunteer and gain valuable experience in a dynamic academic environment. Contribute to global and local educational initiatives while developing essential skills in administration, marketing, and event management.</p>
+                <p>Take on meaningful tasks like managing communications, supporting marketing strategies, and assisting with campus events. Your contribution makes a real difference in our educational mission.</p>
+                <a href="mailto:tpetrova@city-ihl.ca?subject=Volunteer Registration" class="btn">Start Your Volunteer Journey</a>
+                <p style="margin-top: 1rem;"><strong>Contact: tpetrova@city-ihl.ca</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info">
+        <div class="container">
+            <h2>Need More Information?</h2>
+            <div class="contact-details">
+                <p>Our HR team is ready to assist with any questions about career opportunities, application processes, or life at C-IHL.</p>
+                <p><strong>Email:</strong> admin@city-ihl.ca</p>
+                <p><strong>Phone:</strong> +1 506 388 2833</p>
+                <a href="mailto:admin@city-ihl.ca" class="btn" style="margin-top: 1.5rem;">Contact HR Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C-IHL</h3>
+                    <p>City Institute of Higher Learning (C-IHL) is an advanced research-focused education institute in New Brunswick, Canada.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Programmes</h3>
+                    <ul>
+                        <li><a href="#">Academic Diplomas</a></li>
+                        <li><a href="#">Executive Education</a></li>
+                        <li><a href="#">Community Programmes</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Student Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>+1 506 388 2833</li>
+                        <li>admin@city-ihl.ca</li>
+                        <li>Moncton, New Brunswick</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 City Institute of Higher Learning</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language selector functionality
+            document.getElementById('language-select').addEventListener('change', function() {
+                const selectedLang = this.value;
+                alert('Language changed to: ' + this.options[this.selectedIndex].text);
+            });
+        });
+    </script>
+</body>
+</html>

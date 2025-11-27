@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>City Institute of Higher Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="C-IHL Logo" class="logo-img">
+            <strong>C-IHL</strong>
+        </div>
+        <nav>
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="programs.html" data-i18n="nav.programmes">Programmes</a>
+            <a href="research.html" data-i18n="nav.research">Research</a>
+            <a href="events.html" data-i18n="nav.events">Events</a>
+            <a href="about.html" data-i18n="nav.about">About</a>
+            <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+        </div>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+        <div class="hero-collage">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="University campus">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f" alt="Students collaborating">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585" alt="Academic building">
+            <img src="https://images.unsplash.com/photo-1582573618381-c9d34e1c14bb" alt="Graduation celebration">
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 data-i18n="hero.title">Welcome to City Institute of Higher Learning</h1>
+
+                <p data-i18n="hero.welcome">
+                    Welcome to City Institute of Higher Learning, where education meets innovation and diversity. Located in the heart of Moncton, C-IHL offers a variety of programmes tailored to foster global leaders equipped with the knowledge and skills necessary for success. Join us and become part of a community that values academic integrity and inclusivity.
+                </p>
+                
+                <p class="weare">
+                    <span data-i18n="hero.weare.1">We are Atlantic Canada's Bilingual Private Institute of Higher Learning.</span><br>
+                    <span data-i18n="hero.weare.2">We are a research-based learning institution.</span><br>
+                    <span data-i18n="hero.weare.3">We are powered by a global team.</span><br>
+                    <span data-i18n="hero.weare.4">We are here to serve you.</span><br>
+                    <span data-i18n="hero.weare.5">We are Quality.</span>
+                </p>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <h3>95%</h3>
+                        <p data-i18n="achievements.placement">Career Placement Rate</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>20:1</h3>
+                        <p data-i18n="achievements.ratio">Student Ratio</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>15+</h3>
+                        <p data-i18n="achievements.programmes">Programmes</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>2K</h3>
+                        <p data-i18n="achievements.students">Future Students</p>
+                    </div>
+                </div>
+
+                <a class="cta" href="pages/contact.html" data-i18n="hero.cta">Start Your Journey</a>
+            </div>
+
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" alt="C-IHL Campus" class="hero-main-image">
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <h3><i class="fas fa-graduation-cap"></i></h3>
+                        <p data-i18n="benefits.quality">Quality Education</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3><i class="fas fa-globe-americas"></i></h3>
+                        <p data-i18n="benefits.global">Global Perspective</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROGRAMS ===================== -->
+    <section class="section">
+        <h2 data-i18n="programmes.title">Programmes We Offer</h2>
+        <p data-i18n="programmes.desc">
+            We offer several higher learning diplomas and certificates geared at developing students' research and management skills. All our programs are offered in English and/or French.
+        </p>
+
+        <div class="program-grid">
+            <div class="card card-with-image">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Academic programs" class="card-image">
+                <div class="card-content">
+                    <h3 data-i18n="programmes.academic">Academic Diplomas</h3>
+                    <p data-i18n="programmes.academic.desc">Comprehensive higher learning diplomas for professional career success and academic advancement.</p>
+                    <a href="programmes.html#academic" data-i18n="programmes.view">Explore Programmes</a>
+                </div>
+            </div>
+
+            <div class="card card-with-image">
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984" alt="Community programs" class="card-image">
+                <div class="card-content">
+                    <h3 data-i18n="programmes.community">Community Programmes</h3>
+                    <p data-i18n="programmes.community.desc">Engage in cultural storytelling, language immersion, and community development initiatives.</p>
+                    <a href="pages/programmes.html#community" data-i18n="programmes.view">View Offerings</a>
+                </div>
+            </div>
+
+            <div class="card card-with-image">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43" alt="Executive education" class="card-image">
+                <div class="card-content">
+                    <h3 data-i18n="programmes.executive">Executive Education</h3>
+                    <p data-i18n="programmes.executive.desc">Advanced leadership and managerial training for experienced professionals and executives.</p>
+                    <a href="pages/programmes.html#executive" data-i18n="programmes.view">Learn More</a>
+                </div>
+            </div>
+
+            <div class="card card-with-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Consulting services" class="card-image">
+                <div class="card-content">
+                    <h3 data-i18n="programmes.consulting">Consulting Services</h3>
+                    <p data-i18n="programmes.consulting.desc">Expert HR development, team optimization, and strategic business guidance services.</p>
+                    <a href="pages/programmes.html#consulting" data-i18n="programmes.view">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== BENEFITS ===================== -->
+    <section class="section">
+        <h2 data-i18n="benefits.title">Why Choose City-IHL?</h2>
+        <p data-i18n="benefits.desc">Experience education that transforms lives and builds futures with our student-centered approach.</p>
+
+        <div class="benefits">
+            <div class="card">
+                <div class="benefit-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 data-i18n="benefits.global">Global Opportunities</h3>
+                <p data-i18n="benefits.global.desc">Study in a multicultural environment with international exchange programs and global partnerships.</p>
+            </div>
+
+            <div class="card">
+                <div class="benefit-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3 data-i18n="benefits.faculty">Expert Faculty</h3>
+                <p data-i18n="benefits.faculty.desc">Learn from distinguished professors and industry leaders dedicated to your academic success.</p>
+            </div>
+
+            <div class="card">
+                <div class="benefit-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 data-i18n="benefits.career">Career Excellence</h3>
+                <p data-i18n="benefits.career.desc">Graduate with competitive skills, professional networks, and comprehensive career support.</p>
+            </div>
+
+            <div class="card">
+                <div class="benefit-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3 data-i18n="benefits.flexible">Flexible Pathways</h3>
+                <p data-i18n="benefits.flexible.desc">Customize your learning journey with flexible schedules and personalized academic guidance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== RESEARCH HIGHLIGHTS ===================== -->
+    <section class="section">
+        <h2 data-i18n="research.title">Research Excellence</h2>
+        <p data-i18n="research.desc">Pioneering research that addresses global challenges and drives innovation across disciplines.</p>
+
+        <div class="research-highlights">
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 data-i18n="research.labs">Innovation Labs</h3>
+                    <p data-i18n="research.labs.desc">State-of-the-art facilities for cutting-edge research and experimental learning.</p>
+                </div>
+
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-i18n="research.collaborative">Collaborative Projects</h3>
+                    <p data-i18n="research.collaborative.desc">Interdisciplinary research initiatives with industry and academic partners worldwide.</p>
+                </div>
+
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 data-i18n="research.grants">Research Grants</h3>
+                    <p data-i18n="research.grants.desc">Substantial funding opportunities for student and faculty research projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== UPCOMING EVENTS ===================== -->
+    <section class="section">
+        <h2 data-i18n="events.title">Upcoming Events</h2>
+        <p data-i18n="events.desc">Join our vibrant campus community through engaging events, workshops, and cultural activities.</p>
+
+        <div class="events-preview">
+            <div class="event-cards">
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="month">MAR</div>
+                        <div class="day">15</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 data-i18n="events.openhouse">Open House 2024</h3>
+                        <p data-i18n="events.openhouse.desc">Explore our campus, meet faculty, and discover your future at C-IHL.</p>
+                        <a href="pages/events.html" data-i18n="events.learnmore">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="month">APR</div>
+                        <div class="day">03</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 data-i18n="events.symposium">Research Symposium</h3>
+                        <p data-i18n="events.symposium.desc">Annual showcase of groundbreaking research from students and faculty.</p>
+                        <a href="pages/events.html" data-i18n="events.viewdetails">View Details</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <div class="month">MAY</div>
+                        <div class="day">22</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 data-i18n="events.careerfair">Career Fair</h3>
+                        <p data-i18n="events.careerfair.desc">Connect with top employers and explore career opportunities.</p>
+                        <a href="pages/events.html" data-i18n="events.register">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ACHIEVEMENTS ===================== -->
+    <section class="section">
+        <h2 data-i18n="achievements.title">Our Impact</h2>
+
+        <div class="stats">
+            <div class="stat">
+                <h1>20:1</h1>
+                <p data-i18n="achievements.ratio">Student–Teacher Ratio</p>
+            </div>
+
+            <div class="stat">
+                <h1>95%</h1>
+                <p data-i18n="achievements.placement">Career Placement Rate</p>
+            </div>
+
+            <div class="stat">
+                <h1>2K+</h1>
+                <p data-i18n="achievements.students">Future Students</p>
+            </div>
+
+            <div class="stat">
+                <h1>15+</h1>
+                <p data-i18n="achievements.programmes">Programmes Offered</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>C-IHL</h3>
+                <p data-i18n="footer.about">City Institute of Higher Learning (C-IHL) is an advanced research-focused education institute in New Brunswick, Canada.</p>
+            </div>
+
+            <div>
+                <h3 data-i18n="footer.programmes">Programmes</h3>
+                <p><a href="pages/programmes.html#academic" data-i18n="programmes.academic">Academic Diplomas</a></p>
+                <p><a href="pages/programmes.html#executive" data-i18n="programmes.executive">Executive Education</a></p>
+                <p><a href="pages/programmes.html#community" data-i18n="programmes.community">Language Courses</a></p>
+                <p><a href="pages/programmes.html#consulting" data-i18n="programmes.consulting">Consulting Services</a></p>
+            </div>
+
+            <div>
+                <h3 data-i18n="footer.links">Quick Links</h3>
+                <p><a href="about.html" data-i18n="nav.about">About C-IHL</a></p>
+                <p><a href="programmes.html" data-i18n="footer.services">Student Services</a></p>
+                <p><a href="pages/contact.html" data-i18n="nav.contact">Contact Us</a></p>
+                <p><a href="pages/about.html" data-i18n="footer.terms">Terms & Conditions</a></p>
+            </div>
+
+            <div>
+                <h3 data-i18n="footer.contact">Contact</h3>
+                <p><i class="fas fa-phone"></i> +1 506 388 2833</p>
+                <p><i class="fas fa-envelope"></i> admin@city-ihl.ca</p>
+                <p><i class="fas fa-map-marker-alt"></i> Moncton, New Brunswick</p>
+                <p>© 2025 City Institute of Higher Learning</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="language.js"></script>
+</body>
+</html>
