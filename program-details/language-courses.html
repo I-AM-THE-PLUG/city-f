@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGCE - City Institute of Higher Learning</title>
+    <style>
+        /* Same CSS as previous program detail pages */
+        :root {
+            --bg-start: #F9EDE4;
+            --bg-mid: #E7B7A5;
+            --bg-end: #C25A47;
+            --accent: #D67A63;
+            --nav-height: 72px;
+            --card-radius: 14px;
+            --glass: rgba(255,255,255,0.2);
+            --max-width: 1200px;
+            --text-dark: #0A1A2A;
+            --green-dark: #0F3D2E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-start);
+        }
+        
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--text-dark);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .logo h2 {
+            color: white;
+        }
+        
+        .language-selector select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--bg-start);
+        }
+        
+        /* Program Hero */
+        .program-hero {
+            margin-top: var(--nav-height);
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 100%);
+        }
+        
+        .program-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .program-type {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .program-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .program-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            text-align: center;
+        }
+        
+        .meta-label {
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Program Content */
+        .program-content {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .main-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        
+        .main-content h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-dark);
+        }
+        
+        .main-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .main-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .main-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background-color: var(--bg-start);
+            border-radius: var(--card-radius);
+            padding: 2rem;
+            height: fit-content;
+        }
+        
+        .quick-info {
+            margin-bottom: 2rem;
+        }
+        
+        .info-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--bg-mid);
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--bg-end);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--bg-end);
+            color: var(--bg-end);
+            margin-top: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--bg-end);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--bg-start);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .program-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .program-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <h2>C-IHL</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../programs.html">Programs</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../career.html">Career</a></li>
+            <li><a href="../events.html">Events</a></li>
+            <li><a href="../partnerships.html">Partnerships</a></li>
+        </ul>
+        <div class="language-selector">
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Program Hero -->
+    <section class="program-hero">
+        <div class="container">
+            <div class="program-header">
+                <span class="program-type">1 Year • Certificate</span>
+                <h1 class="program-title">Postgraduate Certificate in Education (PGCE)</h1>
+                <p>Innovative programme preparing candidates to teach in diverse educational settings with specialized pathways.</p>
+                
+                <div class="program-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Duration</div>
+                        <div>1 Year</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Format</div>
+                        <div>On-campus / Virtual</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Fees</div>
+                        <div>$5,000-$7,000 CAD</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Language</div>
+                        <div>English & French</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Content -->
+    <section class="program-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <h2>Program Overview</h2>
+                    <p>This innovative programme prepares candidates to teach in a variety of educational settings: secondary, postsecondary and industry depending on their specialization. The programme takes the learners through key learning theories, the challenges of today's educational system and classroom.</p>
+                    
+                    <p>It addresses issues of equality and equity. It also provides practical skills in planning and learning and assessing learners. The practicum allows participants to develop teaching effectiveness and have hands-on experience of the issues they covered in the modules.</p>
+                    
+                    <p>After the core modules covering all pathways, candidates specialize in their desired teaching sector: secondary, postsecondary or training.</p>
+                    
+                    <h3>Core Modules (All Pathways)</h3>
+                    <ul>
+                        <li>Learning theories</li>
+                        <li>Equality and diversity in education</li>
+                        <li>The Reflective practitioner</li>
+                        <li>Teaching Practice [Practicum]</li>
+                        <li>Scheme of work and lesson planning</li>
+                        <li>Assessment and evaluation</li>
+                        <li>Decolonizing the curriculum</li>
+                    </ul>
+                    
+                    <h3>Pathway 1: Teaching in Postsecondary Education</h3>
+                    <p>This pathway is for candidates wanting to teach subject matters and trade in educational settings catering for learners over 16 years old. Candidates take the three specialist modules below and undertake their teaching practice in the subject they are qualified to teach.</p>
+                    <ul>
+                        <li>The wider context of postsecondary education & training</li>
+                        <li>The Role of the teacher and trainer the in postsecondary sector</li>
+                        <li>Advanced assessment and evaluation</li>
+                    </ul>
+                    
+                    <h3>Pathway 2: Teaching in International Education (Secondary)</h3>
+                    <p>This pathway is for candidates wanting to teach their subject matters and trade internationally in secondary educational settings catering for learners 11 – 18 years old. Candidates take the three specialist modules below and undertake their teaching practice in the subject they are qualified to teach.</p>
+                    <ul>
+                        <li>Internationalisation in education (overlapping/ hybrid)</li>
+                        <li>Culture and education</li>
+                        <li>Teaching literacy in the developing world</li>
+                    </ul>
+                    
+                    <h3>Pathway 3: Training and Consulting</h3>
+                    <p>This pathway is for candidates expecting to train others in organizations, the community or higher postsecondary setting. It is also for those aiming to be consultants. Candidates take the three specialist modules below and undertake their practicum in their subject area.</p>
+                    <ul>
+                        <li>The Role of the teacher and trainer the in postsecondary sector</li>
+                        <li>Advanced Training Skills</li>
+                        <li>Advanced Consulting Skills</li>
+                    </ul>
+                    
+                    <h3>Career Opportunities</h3>
+                    <p>Graduates of this programme are prepared for various roles including:</p>
+                    <ul>
+                        <li>Teacher in secondary schools</li>
+                        <li>Lecturer in postsecondary institutions</li>
+                        <li>Corporate trainer</li>
+                        <li>Educational consultant</li>
+                        <li>Education resource officer</li>
+                        <li>Public sector education worker</li>
+                        <li>International school teacher</li>
+                    </ul>
+                    
+                    <h3>Assessment</h3>
+                    <p>Coursework, tests, teaching practice, project.</p>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="quick-info">
+                        <h3>Quick Facts</h3>
+                        <div class="info-item">
+                            <div class="info-label">Program Length</div>
+                            <div>1 year</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Study Mode</div>
+                            <div>Full-time / Part-time</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Start Dates</div>
+                            <div>January, September</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Assessment</div>
+                            <div>Coursework, tests, teaching practice</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Tuition Fees</div>
+                            <div>$5,000 (Home) / $7,000 (Virtual Abroad)</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Pathways</div>
+                            <div>3 specialized pathways available</div>
+                        </div>
+                    </div>
+                    
+                    <a href="mailto:admin@city-ihl.ca?subject=Application for PGCE" class="btn">Apply Now</a>
+                    <a href="#" class="btn btn-outline">Download Brochure</a>
+                    <a href="../programs.html" class="btn btn-outline">View All Programs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>C-IHL</h3>
+                    <p>City Institute of Higher Learning (C-IHL) is an advanced research-focused education institute in New Brunswick, Canada.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Programmes</h3>
+                    <ul>
+                        <li><a href="../programs.html">Academic Diplomas</a></li>
+                        <li><a href="../programs.html">Executive Education</a></li>
+                        <li><a href="../programs.html">Community Programmes</a></li>
+                        <li><a href="../programs.html">Consulting Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#">Student Services</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>+1 506 388 2833</li>
+                        <li>admin@city-ihl.ca</li>
+                        <li>Moncton, New Brunswick</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 City Institute of Higher Learning</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language selector functionality
+            document.getElementById('language-select').addEventListener('change', function() {
+                const selectedLang = this.value;
+                alert('Language changed to: ' + this.options[this.selectedIndex].text);
+            });
+        });
+    </script>
+</body>
+</html>
